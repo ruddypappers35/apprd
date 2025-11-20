@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Catatan Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 id="header-title">Catatan</h1>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn"><i data-lucide="moon"></i></button>
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container" id="search-container">
+            <div class="search-bar">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" placeholder="Cari catatan...">
+            </div>
+        </div>
+
+        <!-- Note List View -->
+        <main id="notes-list-view" class="view active">
+            <div id="notes-grid" class="notes-grid">
+                <!-- Notes will be injected here -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">
+                <i data-lucide="file-plus" class="empty-icon"></i>
+                <p>Belum ada catatan. Buat baru!</p>
+            </div>
+        </main>
+
+        <!-- Note Editor View -->
+        <main id="note-editor-view" class="view">
+            <div class="editor-toolbar">
+                <button id="back-btn" class="icon-btn"><i data-lucide="arrow-left"></i></button>
+                <span class="last-edited" id="last-edited">Baru</span>
+                <button id="save-btn" class="icon-btn primary-text">Selesai</button>
+            </div>
+            <div class="editor-content">
+                <input type="text" id="note-title" placeholder="Judul" autocomplete="off">
+                <textarea id="note-body" placeholder="Mulai mengetik..."></textarea>
+            </div>
+            <div class="editor-footer">
+                <button id="delete-btn" class="icon-btn danger-text"><i data-lucide="trash-2"></i></button>
+            </div>
+        </main>
+
+        <!-- Floating Action Button -->
+        <button id="fab-add" class="fab">
+            <i data-lucide="plus"></i>
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
